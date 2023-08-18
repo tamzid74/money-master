@@ -1,6 +1,3 @@
-
-// const clothsField = document.getElementById('cloths-field');
-
 const calculator = document.getElementById('Calculate-btn');
 const save = document.getElementById('save-btn');
 
@@ -21,14 +18,13 @@ save.addEventListener('click', function(){
     const foodField = getInputValue('food-field');
     const rentField = getInputValue('rent-field') ;
     const clothsField = getInputValue('cloths-field') ;
+    const totalExpense = foodField + rentField + clothsField;
+    const totalBalance = incomeField - totalExpense;
     const save = getInputValue('discount-field');
     const savingAmount = (incomeField*save) / 100;
     setInnerText('saving',savingAmount);
-    const totalExpense = foodField + rentField + clothsField;
-    const totalBalance = incomeField - totalExpense;
     const remainingBalance = totalBalance-savingAmount; 
     setInnerText('remaining',remainingBalance);
-
     
 })
 
