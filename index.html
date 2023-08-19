@@ -1,52 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Money Master</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <section class="max-w-xl mx-auto mt-8">
-            <h1 class=" text-3xl md:text-5xl font-bold text-[#31A5AC] text-center">Money Master💰 </h1>
-            <div class="w-full mx-auto bg-[#F8F8F8] mt-8 shadow-lg p-14">
-                <h1 class="text-xl md:text-2xl font-semibold text-center mb-6">Income</h1>
-                <div class="flex gap-1 mb-6 md:gap-4 md:pl-14">
-                    <p class="text-xl font-medium">Income:</p>
-                    <input id="income-field" class="bg-[#DCDCDC] md:w-56 p-1 " type="text" name="" id="">
-                </div>
-                <h1 class="text-xl md:text-2xl font-semibold text-center mb-6">Expense</h1>
-                <div class="flex gap-1 md:gap-4 mb-6 md:pl-14">
-                    <p class="text-xl font-medium md:ml-5">Food:</p>
-                    <input id="food-field" class="bg-[#DCDCDC] md:w-56 p-1" type="text" name="" id="">
-                </div>
-                <div class="flex gap-1 md:gap-4 mb-6 md:pl-14">
-                    <p class="text-xl font-medium md:ml-6">Rent:</p>
-                    <input id="rent-field" class="bg-[#DCDCDC] md:w-56 p-1" type="text" name="" id="">
-                </div>
-                <div class="flex gap-1 md:gap-4 mb-6 md:pl-14">
-                    <p class="text-xl font-medium md:ml-2">Cloths:</p>
-                    <input id="cloths-field" class="bg-[#DCDCDC] md:w-56 p-1" type="text" name="" id="">
-                </div>
-                <div class="flex justify-center mb-6">
-                    <button id="Calculate-btn" class="bg-blue-400 text-2xl py-3 px-14 text-white">Calculate</button>
-                </div>
-                <h1 class="text-center text-2xl font-medium mb-4">Total Expense: <span id="total-expense"></span>$</h1>
-                <h1 class="text-center text-2xl font-medium mb-4">Balance: <span id="total-balance"></span>$</h1>
-                <div class="flex mb-8 md:gap-6 ">
-                    <p class="text-xl font-medium md:ml-2">Save: <input class="bg-[#DCDCDC] w-28 p-1 ml-3" type="text" name="" id="discount-field"> 
-                        <span class="ml-4">%</span> </p>
-                    <button id="save-btn" class="bg-blue-400 text-xl px-14 py-1 text-white">Save</button>
-                </div>
-                <h1 class="text-center text-2xl font-medium mb-4">Saving Amount: <span id="saving"></span>$</h1>
-                <h1 class="text-center text-2xl font-medium">Remaining Balance: <span id="remaining"></span>$</h1>
-                <!-- <p>Save: <input type="text"> % <button>Save</button></p> -->
-                
-                
-            </div>
-        </section>
+      <section class="max-w-xl mx-auto mt-8">
+        <h1 class="text-3xl md:text-5xl font-bold text-[#31A5AC] text-center">
+          Money Master💰
+        </h1>
+        <div class="w-full mx-auto bg-[#F8F8F8] mt-8 shadow-lg p-14">
+          <h1 class="text-xl md:text-2xl font-semibold text-center mb-6">
+            Income
+          </h1>
+          <div class="flex gap-1 mb-6 md:gap-4 md:pl-14">
+            <p class="text-xl font-medium">Income:</p>
+            <input
+              id="income-field"
+              class="bg-[#DCDCDC] md:w-56 p-1"
+              type="text"
+              name=""
+              id=""
+            />
+          </div>
+          <h1 class="text-xl md:text-2xl font-semibold text-center mb-6">
+            Expense
+          </h1>
+          <div class="flex gap-1 md:gap-4 mb-6 md:pl-14">
+            <p class="text-xl font-medium md:ml-5">Food:</p>
+            <input
+              id="food-field"
+              class="bg-[#DCDCDC] md:w-56 p-1"
+              type="text"
+              name=""
+              id=""
+            />
+          </div>
+          <div class="flex gap-1 md:gap-4 mb-6 md:pl-14">
+            <p class="text-xl font-medium md:ml-6">Rent:</p>
+            <input
+              id="rent-field"
+              class="bg-[#DCDCDC] md:w-56 p-1"
+              type="text"
+              name=""
+              id=""
+            />
+          </div>
+          <div class="flex gap-1 md:gap-4 mb-6 md:pl-14">
+            <p class="text-xl font-medium md:ml-2">Cloths:</p>
+            <input
+              id="cloths-field"
+              class="bg-[#DCDCDC] md:w-56 p-1"
+              type="text"
+              name=""
+              id=""
+            />
+          </div>
+          <div class="flex justify-center mb-6">
+            <button
+              id="Calculate-btn"
+              class="bg-blue-400 text-xs px-6 md:text-2xl py-3 md:px-14 text-white"
+            >
+              Calculate
+            </button>
+          </div>
+          <h1 class="text-center text-xl md:text-2xl font-medium mb-4">
+            Total Expense: <span id="total-expense"></span>$
+          </h1>
+          <h1 class="text-center text-xl md:text-2xl font-medium mb-4">
+            Balance: <span id="total-balance"></span>$
+          </h1>
+          <div class="flex ml-10 mb-8 md:gap-6">
+            <p class="text-xl font-medium md:ml-2">
+              Save:
+              <input
+                class="bg-[#DCDCDC] w-10 md:w-28 p-1 md:ml-3"
+                type="text"
+                name=""
+                id="discount-field"
+              />
+              <span class=" ml-1 md:ml-4">%</span>
+            </p>
+            <button
+              id="save-btn"
+              class="bg-blue-400 text-xs ml-2 lg:text-xl px-2 md:px-14 py-1 text-white"
+            >
+              Save
+            </button>
+          </div>
+          <h1 class="text-center text-xl md:text-2xl font-medium mb-4">
+            Saving Amount: <span id="saving"></span>$
+          </h1>
+          <h1 class="text-center text-xl md:text-2xl font-medium">
+            Remaining Balance: <span id="remaining"></span>$
+          </h1>
+          <!-- <p>Save: <input type="text"> % <button>Save</button></p> -->
+        </div>
+      </section>
     </main>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
