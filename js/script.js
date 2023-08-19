@@ -7,10 +7,32 @@ calculator.addEventListener('click',function(){
     const foodField = getInputValue('food-field');
     const rentField = getInputValue('rent-field') ;
     const clothsField = getInputValue('cloths-field') ;
+    // validation part
+    if(isNaN(incomeField)){
+        alert('Please provide a number');
+        return;
+    }
+    if(isNaN(foodField)){
+        alert('Please provide me a number');
+        return;
+    }
+
+    if(isNaN(rentField)){
+        alert('Please provide me a number');
+        return;
+    }
+
+    if(isNaN(clothsField)){
+        alert('Please provide me a number');
+        return;
+    }
+
     const totalExpense = foodField + rentField + clothsField;
     setInnerText('total-expense',totalExpense);  
     const totalBalance = incomeField - totalExpense;
     setInnerText('total-balance',totalBalance);
+
+    
 });
 
 save.addEventListener('click', function(){
@@ -21,6 +43,12 @@ save.addEventListener('click', function(){
     const totalExpense = foodField + rentField + clothsField;
     const totalBalance = incomeField - totalExpense;
     const save = getInputValue('discount-field');
+
+    // validation for saving percentage
+    if(isNaN(save)){
+        alert('Invalid input');
+        return;
+    }
     const savingAmount = (incomeField*save) / 100;
     setInnerText('saving',savingAmount);
     const remainingBalance = totalBalance-savingAmount; 
